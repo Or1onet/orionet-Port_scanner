@@ -4,4 +4,8 @@ this is a port scanner created by orionet. That allows you to scan the ports of 
 with --help can get all the commands of the program
 
 # Installation
-git clone 
+git clone https://github.com/Or1onet/orionet-Port_scanner.git
+
+# start program
+python3 port_scanner [command]
+
