@@ -7,5 +7,5 @@ with --help can get all the commands of the program
 git clone https://github.com/Or1onet/orionet-Port_scanner.git
 
 # start program
-python3 port_scanner [command]
+python3 port_scanner.py
 
