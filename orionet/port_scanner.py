@@ -4,6 +4,7 @@ import time
 import sys
 import random
 import os
+import subprocess
 import re
 def banner():
     
@@ -25,6 +26,7 @@ by Orionet""")
 banner()
 
 start=time.time()
+
 
 def porte_com(host2):
     
@@ -104,7 +106,7 @@ def sito_open(percor):
         cont=0
         cont_no=0
         
-        percors=str(percor.strip('"').strip("'"))
+        percors=str(percor.strip('"').strip("'").strip(" ").strip(""))
         if not os.path.isfile(percors):
             print("ERROR  the specified file does not exist")
             sys.exit()
@@ -123,12 +125,12 @@ def sito_open(percor):
                             continue
                     
                    
-                        t4=socket.gethostbyname(elements)
-                        print(f"the site {elements}  IP {t4}  is confirmed")
+                        
+                        print(f"the site {elements} is confirmed")
                         for por in (20, 21, 22, 23, 25, 53, 67, 68, 69, 80, 110, 119, 123, 137, 138, 139, 143, 161, 162, 179, 389, 443, 465, 500, 514, 515, 520, 587, 636, 993, 995, 1080, 1433, 1521, 1723, 1900, 1935, 2049, 2181, 3306, 3389, 3690, 4000, 5000, 5432, 5631, 5900, 6379, 6667, 8000, 8080, 8443, 25565, 27015, 28960, 3478, 3479, 3724, 5000):
                             try:
                                 sock=socket.socket(socket.AF_INET,socket.SOCK_STREAM,proto=0)
-                                conect=sock.connect_ex((t4,por))
+                                conect=sock.connect_ex((elements,por))
                                 if conect==0:
                                     cont +=1
                                     print(f"the site: {elements} is OPEN at the port {por} ")
